@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Algorithms/DesignTimeBuild
+/.vs/Algorithms/v15/Server/sqlite3
+/.vs/Algorithms/v15/.suo
+/.vs/TWIAlgorithms/v15/.suo
+/.vs
+/DataStructures/obj/Debug
+/DSOperations/obj/Debug
+/Logger/obj/Debug
+/MainDemo/.vs/MainDemo/v15
+/MainDemo/obj/Debug
+/VisualStudio.gitignore
