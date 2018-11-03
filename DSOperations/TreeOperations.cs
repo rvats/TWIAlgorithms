@@ -9,6 +9,7 @@ namespace DSOperations
     {
         private BinaryTreeNode current;
 
+        #region PopulateTreeOperations
         public void PopulateBinarySearchTree(List<object> Data)
         {
             var root = current;
@@ -40,47 +41,78 @@ namespace DSOperations
 
             return root;
         }
+        #endregion
 
-        public void PreOrderTraversal()
+        #region RecursiveTraversal
+        public void RecursivePreOrderTraversal()
         {
             BinaryTreeNode root = current;
-            PreOrderTraversal(current);
+            RecursivePreOrderTraversal(current);
         }
 
-        private void PreOrderTraversal(BinaryTreeNode root)
+        private void RecursivePreOrderTraversal(BinaryTreeNode root)
         {
             if (root == null) return;
             Console.Write(root.Value.ToString()+" ");
-            PreOrderTraversal(root.Left);
-            PreOrderTraversal(root.Right);
+            RecursivePreOrderTraversal(root.Left);
+            RecursivePreOrderTraversal(root.Right);
         }
 
-        public void InOrderTraversal()
+        public void RecursiveInOrderTraversal()
         {
             BinaryTreeNode root = current;
-            InOrderTraversal(current);
+            RecursiveInOrderTraversal(current);
         }
 
-        private void InOrderTraversal(BinaryTreeNode root)
+        private void RecursiveInOrderTraversal(BinaryTreeNode root)
         {
             if (root == null) return;
-            InOrderTraversal(root.Left);
+            RecursiveInOrderTraversal(root.Left);
             Console.Write(root.Value.ToString() + " ");
-            InOrderTraversal(root.Right);
+            RecursiveInOrderTraversal(root.Right);
         }
 
-        public void PostOrderTraversal()
+        public void RecursivePostOrderTraversal()
         {
             BinaryTreeNode root = current;
-            PostOrderTraversal(current);
+            RecursivePostOrderTraversal(current);
         }
 
-        private void PostOrderTraversal(BinaryTreeNode root)
+        private void RecursivePostOrderTraversal(BinaryTreeNode root)
         {
             if (root == null) return;
-            PostOrderTraversal(root.Left);
-            PostOrderTraversal(root.Right);
+            RecursivePostOrderTraversal(root.Left);
+            RecursivePostOrderTraversal(root.Right);
             Console.Write(root.Value.ToString() + " ");
         }
+        #endregion
+
+        #region IterativeTraversal
+        public List<BinaryTreeNode> IterativePreOrderTraversal()
+        {
+            var preOrderPath = new List<BinaryTreeNode>();
+            if (current == null)
+            {
+                return preOrderPath;
+            }
+            var root = current;
+            
+            var stack = new Stack<BinaryTreeNode>();
+            stack.Push(root);
+            while (stack.Count > 0)
+            {
+                preOrderPath.Add(stack.Pop());
+                if (root.Right != null)
+                {
+                    stack.Push(root.Right);
+                }
+                if(root.Left != null)
+                {
+                    stack.Push(root.Left);
+                }
+            }
+            return preOrderPath;
+        }
+        #endregion
     }
 }

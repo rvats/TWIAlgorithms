@@ -5,16 +5,16 @@ namespace DataStructures
     public class Node
     {
         public object Value { get; set; }
-        public List<Node> AdjacentNodes { get; set; }
+        public Queue<Node> AdjacentNodes { get; set; }
         public Node()
         {
-            AdjacentNodes = new List<Node>();
+            AdjacentNodes = new Queue<Node>();
         }
 
         public Node(object value)
         {
             Value = value;
-            AdjacentNodes = new List<Node>();
+            AdjacentNodes = new Queue<Node>();
         }
     }
 }

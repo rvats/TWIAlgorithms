@@ -32,5 +32,29 @@ namespace DSOperations
             }
             return DepthFirstPath;
         }
+
+        public List<Node> BreadthFirstTraversal()
+        {
+            var BreadthFirstPath = new List<Node>();
+            var queue = new Queue<Node>();
+            queue.Enqueue(StartingNode);
+            while (queue.Count > 0)
+            {
+                var nodeAtFrontOfQueue = queue.Peek();
+                if (!BreadthFirstPath.Contains(nodeAtFrontOfQueue))
+                {
+                    BreadthFirstPath.Add(nodeAtFrontOfQueue);
+                    foreach (var neighbour in nodeAtFrontOfQueue.AdjacentNodes)
+                    {
+                        if (!BreadthFirstPath.Contains(neighbour))
+                        {
+                            queue.Enqueue(neighbour);
+                        }
+                    }
+                }
+                queue.Dequeue();
+            }
+            return BreadthFirstPath;
+        }
     }
 }
