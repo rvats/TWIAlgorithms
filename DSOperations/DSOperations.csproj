@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="GraphOperations.cs" />
     <Compile Include="IGraphOperations.cs" />
+    <Compile Include="ITreeOperations.cs" />
     <Compile Include="TreeOperations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

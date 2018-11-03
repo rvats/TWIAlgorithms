@@ -5,9 +5,20 @@ using System.Linq;
 
 namespace DSOperations
 {
-    public class TreeOperations
+    public class TreeOperations : ITreeOperations
     {
         private BinaryTreeNode current;
+
+        public TreeOperations()
+        {
+            PreOrderTraversalPath = new List<BinaryTreeNode>();
+            InOrderTraversalPath = new List<BinaryTreeNode>();
+            PostOrderTraversalPath = new List<BinaryTreeNode>();
+        }
+
+        private List<BinaryTreeNode> PreOrderTraversalPath;
+        private List<BinaryTreeNode> InOrderTraversalPath;
+        private List<BinaryTreeNode> PostOrderTraversalPath;
 
         #region PopulateTreeOperations
         public void PopulateBinarySearchTree(List<object> Data)
@@ -44,46 +55,49 @@ namespace DSOperations
         #endregion
 
         #region RecursiveTraversal
-        public void RecursivePreOrderTraversal()
+        public List<BinaryTreeNode> RecursivePreOrderTraversal()
         {
-            BinaryTreeNode root = current;
-            RecursivePreOrderTraversal(current);
+            var root = current;
+            return RecursivePreOrderTraversal(current);
         }
 
-        private void RecursivePreOrderTraversal(BinaryTreeNode root)
+        private List<BinaryTreeNode> RecursivePreOrderTraversal(BinaryTreeNode root)
         {
-            if (root == null) return;
-            Console.Write(root.Value.ToString() + " ");
+            if (root == null) return PreOrderTraversalPath;
+            PreOrderTraversalPath.Add(root);
             RecursivePreOrderTraversal(root.Left);
             RecursivePreOrderTraversal(root.Right);
+            return PreOrderTraversalPath;
         }
 
-        public void RecursiveInOrderTraversal()
+        public List<BinaryTreeNode> RecursiveInOrderTraversal()
         {
             BinaryTreeNode root = current;
-            RecursiveInOrderTraversal(current);
+            return RecursiveInOrderTraversal(current);
         }
 
-        private void RecursiveInOrderTraversal(BinaryTreeNode root)
+        private List<BinaryTreeNode> RecursiveInOrderTraversal(BinaryTreeNode root)
         {
-            if (root == null) return;
+            if (root == null) return InOrderTraversalPath;
             RecursiveInOrderTraversal(root.Left);
-            Console.Write(root.Value.ToString() + " ");
+            InOrderTraversalPath.Add(root);
             RecursiveInOrderTraversal(root.Right);
+            return InOrderTraversalPath;
         }
 
-        public void RecursivePostOrderTraversal()
+        public List<BinaryTreeNode> RecursivePostOrderTraversal()
         {
             BinaryTreeNode root = current;
-            RecursivePostOrderTraversal(current);
+            return RecursivePostOrderTraversal(current);
         }
 
-        private void RecursivePostOrderTraversal(BinaryTreeNode root)
+        private List<BinaryTreeNode> RecursivePostOrderTraversal(BinaryTreeNode root)
         {
-            if (root == null) return;
+            if (root == null) return PostOrderTraversalPath;
             RecursivePostOrderTraversal(root.Left);
             RecursivePostOrderTraversal(root.Right);
-            Console.Write(root.Value.ToString() + " ");
+            PostOrderTraversalPath.Add(root);
+            return PostOrderTraversalPath;
         }
         #endregion
 
@@ -176,6 +190,21 @@ namespace DSOperations
                 postOrderPath.Add(stack2.Pop());
             }
             return postOrderPath;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
         #endregion
     }

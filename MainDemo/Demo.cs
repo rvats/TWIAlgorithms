@@ -17,19 +17,19 @@ namespace MainDemo
             var Data = new List<object> { 5, 3, 7, 2, 4, 6, 8, 1, 9 };
             treeOperations.PopulateBinarySearchTree(Data);
             Console.WriteLine("=========================================================================");
-            treeOperations.RecursivePreOrderTraversal();
-            Console.WriteLine();
-            var preOrderPath = treeOperations.IterativePreOrderTraversal();
+            var preOrderPath = treeOperations.RecursivePreOrderTraversal();
+            DisplayPath(preOrderPath);
+            preOrderPath = treeOperations.IterativePreOrderTraversal();
             DisplayPath(preOrderPath);
             Console.WriteLine("=========================================================================");
-            treeOperations.RecursiveInOrderTraversal();
-            Console.WriteLine();
-            var inOrderPath = treeOperations.IterativeInOrderTraversal();
+            var inOrderPath = treeOperations.RecursiveInOrderTraversal();
+            DisplayPath(inOrderPath);
+            inOrderPath = treeOperations.IterativeInOrderTraversal();
             DisplayPath(inOrderPath);
             Console.WriteLine("=========================================================================");
-            treeOperations.RecursivePostOrderTraversal();
-            Console.WriteLine();
-            var postOrderPath = treeOperations.IterativePostOrderTraversal();
+            var postOrderPath = treeOperations.RecursivePostOrderTraversal();
+            DisplayPath(postOrderPath);
+            postOrderPath = treeOperations.IterativePostOrderTraversal();
             DisplayPath(postOrderPath);
             Console.WriteLine("=========================================================================");
         }
