@@ -5,8 +5,12 @@ using System.Collections.Generic;
 
 namespace MainDemo
 {
-    class Demo
+    class Demo : IDemo
     {
+        public Demo()
+        {
+        }
+
         public static void TreeTraversal()
         {
             TreeOperations treeOperations = new TreeOperations();
@@ -20,9 +24,13 @@ namespace MainDemo
             Console.WriteLine("=========================================================================");
             treeOperations.RecursiveInOrderTraversal();
             Console.WriteLine();
+            var inOrderPath = treeOperations.IterativeInOrderTraversal();
+            DisplayPath(inOrderPath);
             Console.WriteLine("=========================================================================");
             treeOperations.RecursivePostOrderTraversal();
             Console.WriteLine();
+            var postOrderPath = treeOperations.IterativePostOrderTraversal();
+            DisplayPath(postOrderPath);
             Console.WriteLine("=========================================================================");
         }
 
@@ -171,6 +179,21 @@ namespace MainDemo
 
             }
             Console.WriteLine();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

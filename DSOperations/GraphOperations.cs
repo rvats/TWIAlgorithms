@@ -4,9 +4,13 @@ using System.Linq;
 
 namespace DSOperations
 {
-    public class GraphOperations
+    public class GraphOperations : IGraphOperations
     {
         public Node StartingNode;
+
+        public GraphOperations()
+        {
+        }
 
         public List<Node> DepthFirstTraversal()
         {
@@ -55,6 +59,21 @@ namespace DSOperations
                 queue.Dequeue();
             }
             return BreadthFirstPath;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }

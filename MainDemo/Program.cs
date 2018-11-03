@@ -4,18 +4,29 @@ namespace MainDemo
 {
     class Program
     {
+        public Program()
+        {
+        }
+
         static void Main(string[] args)
         {
-            Console.WriteLine("========================================================================");
-            Console.WriteLine("Depth First Traversal Demo");
-            Demo.DepthFirstTraversal();
-            Console.WriteLine("========================================================================");
+            Demo.TreeTraversal();
             Console.ReadKey();
-            Console.WriteLine("========================================================================");
-            Console.WriteLine("Breadth First Traversal Demo");
-            Demo.BreadthFirstTraversal();
-            Console.WriteLine("========================================================================");
-            Console.ReadKey();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
         }
     }
 }

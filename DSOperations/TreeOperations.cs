@@ -53,7 +53,7 @@ namespace DSOperations
         private void RecursivePreOrderTraversal(BinaryTreeNode root)
         {
             if (root == null) return;
-            Console.Write(root.Value.ToString()+" ");
+            Console.Write(root.Value.ToString() + " ");
             RecursivePreOrderTraversal(root.Left);
             RecursivePreOrderTraversal(root.Right);
         }
@@ -96,22 +96,86 @@ namespace DSOperations
                 return preOrderPath;
             }
             var root = current;
-            
+
             var stack = new Stack<BinaryTreeNode>();
             stack.Push(root);
             while (stack.Count > 0)
             {
-                preOrderPath.Add(stack.Pop());
+                root = stack.Pop();
+                preOrderPath.Add(root);
                 if (root.Right != null)
                 {
                     stack.Push(root.Right);
                 }
-                if(root.Left != null)
+                if (root.Left != null)
                 {
                     stack.Push(root.Left);
                 }
             }
             return preOrderPath;
+        }
+
+        public List<BinaryTreeNode> IterativeInOrderTraversal()
+        {
+            var inOrderPath = new List<BinaryTreeNode>();
+            if (current == null)
+            {
+                return inOrderPath;
+            }
+            var root = current;
+
+            var stack = new Stack<BinaryTreeNode>();
+
+            while (stack.Count > 0 || root != null)
+            {
+                while (root != null)
+                {
+                    stack.Push(root);
+                    root = root.Left;
+                }
+                root = stack.Pop();
+                inOrderPath.Add(root);
+                root = root.Right;
+            }
+            return inOrderPath;
+        }
+
+        public List<BinaryTreeNode> IterativePostOrderTraversal()
+        {
+            var postOrderPath = new List<BinaryTreeNode>();
+            if (current == null)
+            {
+                return postOrderPath;
+            }
+            var root = current;
+
+            var stack1 = new Stack<BinaryTreeNode>();
+            var stack2 = new Stack<BinaryTreeNode>();
+
+            // push root to first stack 
+            stack1.Push(root);
+
+            // Run while first stack is not empty 
+            while (stack1.Count > 0)
+            {
+                // Pop an item from s1 and push it to s2 
+                var temp = stack1.Pop();
+                stack2.Push(temp);
+
+                // Push left and right children of 
+                // removed item to s1 
+                if (temp.Left != null)
+                    stack1.Push(temp.Left);
+                if (temp.Right != null)
+                    stack1.Push(temp.Right);
+            }
+
+            // Print all elements of second stack 
+            while (stack2.Count > 0)
+            {
+                postOrderPath.Add(stack2.Pop());
+            }
+            return postOrderPath;
         }
         #endregion
     }
