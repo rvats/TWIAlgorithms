@@ -39,6 +39,28 @@ namespace Puzzles
             }
             return true;
         }
+        
+        public static bool ArePermutations(string Data1, string Data2)
+        {
+            if(Data1.Length != Data2.Length)
+            {
+                return false;
+            }
+            int[] countCharacters = new int[256];
+            for(int i = 0; i < Data1.Length; i++)
+            {
+                countCharacters[Data1[i]]++;
+            }
+            for (int i = 0; i < Data2.Length; i++)
+            {
+                countCharacters[Data2[i]]--;
+                if (countCharacters[Data2[i]] < 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
         public static char? FirstRecurringCharacter(string Data)
         {

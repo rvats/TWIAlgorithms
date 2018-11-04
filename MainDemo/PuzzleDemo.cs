@@ -22,5 +22,13 @@ namespace MainDemo
         {
             Console.WriteLine("First Non Recurring Character in " + Data + ": " + StringPuzzles.FirstNonRecurringCharacter(Data));
         }
+
+        public static void ArePermutations(string Data1, string Data2)
+        {
+            var result = StringPuzzles.ArePermutations(Data1, Data2)
+                ? Data1 + " is a permutation of " + Data2
+                : Data1 + " is not a permutation of " + Data2;
+            Console.WriteLine(result);
+        }
     }
 }

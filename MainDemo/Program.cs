@@ -11,10 +11,13 @@ namespace MainDemo
         static void Main(string[] args)
         {
             Console.Write("Enter Your Data String: ");
-            var Data = Console.ReadLine();
-            PuzzleDemo.IsStringContainingAllUniqueCharacters(Data);
-            PuzzleDemo.FirstRecurringCharacter(Data);
-            PuzzleDemo.FirstNonRecurringCharacter(Data);
+            var Data1 = Console.ReadLine();
+            PuzzleDemo.IsStringContainingAllUniqueCharacters(Data1);
+            PuzzleDemo.FirstRecurringCharacter(Data1);
+            PuzzleDemo.FirstNonRecurringCharacter(Data1);
+            Console.Write("Enter Another Data String: ");
+            var Data2 = Console.ReadLine();
+            PuzzleDemo.ArePermutations(Data1, Data2);
             Console.ReadKey();
         }
 
