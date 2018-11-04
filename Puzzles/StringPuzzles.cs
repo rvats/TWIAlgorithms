@@ -20,7 +20,7 @@ namespace Puzzles
         /// <returns></returns>
         public static bool IsStringContainingAllUniqueCharacters(string Data)
         {
-            bool[] charPresentInData = new bool[256];
+            int checker = 0;
             if (Data.Length < 2)
             {
                 return true;
@@ -29,14 +29,12 @@ namespace Puzzles
             {
                 for (int i = 0; i < Data.Length; i++)
                 {
-                    if (charPresentInData[Data[i]])
+                    int tempVariable = Data[i] - 'a';
+                    if ((checker & (1<<tempVariable)) > 0)
                     {
                         return false;
                     }
-                    else
-                    {
-                        charPresentInData[Data[i]] = true;
-                    }
+                    checker |= (1 << tempVariable);
                 }
             }
             return true;
