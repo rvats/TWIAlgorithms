@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace MainDemo
 {
-    class Demo : IDemo
+    class DataStructureDemo : IDemo
     {
-        public Demo()
+        public DataStructureDemo()
         {
         }
 

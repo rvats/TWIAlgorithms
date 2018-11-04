@@ -1,17 +1,12 @@
-﻿using System;
+﻿using Puzzles;
+using System;
 
 namespace MainDemo
 {
-    class Program
+    class PuzzleDemo : IDemo
     {
-        public Program()
+        public PuzzleDemo()
         {
-        }
-
-        static void Main(string[] args)
-        {
-            DataStructureDemo.TreeTraversal();
-            Console.ReadKey();
         }
 
         public override bool Equals(object obj)
@@ -27,6 +22,13 @@ namespace MainDemo
         public override string ToString()
         {
             return base.ToString();
+        }
+
+        public void FirstMultipleOccuringCharacter()
+        {
+            string Data = Console.ReadLine();
+            Console.WriteLine(StringPuzzles.FirstRecurringCharacter(Data));
+            Console.ReadKey();
         }
     }
 }
