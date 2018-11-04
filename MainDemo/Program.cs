@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MainDemo
+﻿namespace MainDemo
 {
     class Program
     {
@@ -10,8 +8,7 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            DataStructureDemo.TreeTraversal();
-            Console.ReadKey();
+            PuzzleDemo.FirstRecurringCharacter();
         }
 
         public override bool Equals(object obj)
