@@ -1,4 +1,6 @@
-﻿namespace MainDemo
+﻿using System;
+
+namespace MainDemo
 {
     class Program
     {
@@ -8,8 +10,11 @@
 
         static void Main(string[] args)
         {
-            PuzzleDemo.FirstRecurringCharacter();
-            PuzzleDemo.FirstNonRecurringCharacter();
+            Console.Write("Enter Your Data String: ");
+            var Data = Console.ReadLine();
+            PuzzleDemo.FirstRecurringCharacter(Data);
+            PuzzleDemo.FirstNonRecurringCharacter(Data);
+            Console.ReadKey();
         }
 
         public override bool Equals(object obj)

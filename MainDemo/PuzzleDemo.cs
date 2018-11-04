@@ -5,18 +5,14 @@ namespace MainDemo
 {
     public static class PuzzleDemo
     {
-        public static void FirstRecurringCharacter()
+        public static void FirstRecurringCharacter(string Data)
         {
-            string Data = Console.ReadLine();
-            Console.WriteLine(StringPuzzles.FirstRecurringCharacter(Data));
-            Console.ReadKey();
+            Console.WriteLine("First Recurring Character in " + Data + ": " + StringPuzzles.FirstRecurringCharacter(Data));
         }
 
-        public static void FirstNonRecurringCharacter()
+        public static void FirstNonRecurringCharacter(string Data)
         {
-            string Data = Console.ReadLine();
-            Console.WriteLine(StringPuzzles.FirstNonRecurringCharacter(Data));
-            Console.ReadKey();
+            Console.WriteLine("First Non Recurring Character in " + Data + ": " + StringPuzzles.FirstNonRecurringCharacter(Data));
         }
     }
 }
