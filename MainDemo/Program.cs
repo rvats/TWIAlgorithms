@@ -12,6 +12,7 @@ namespace MainDemo
         {
             Console.Write("Enter Your Data String: ");
             var Data = Console.ReadLine();
+            PuzzleDemo.IsStringContainingAllUniqueCharacters(Data);
             PuzzleDemo.FirstRecurringCharacter(Data);
             PuzzleDemo.FirstNonRecurringCharacter(Data);
             Console.ReadKey();

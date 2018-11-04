@@ -8,6 +8,30 @@ namespace Puzzles
 {
     public static class StringPuzzles
     {
+        public static bool IsStringContainingAllUniqueCharacters(string Data)
+        {
+            if (Data.Length < 2)
+            {
+                return true;
+            }
+            else
+            {
+                HashSet<char> charInData = new HashSet<char>();
+                for (int i = 0; i < Data.Length; i++)
+                {
+                    if (charInData.Contains(Data[i]))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        charInData.Add(Data[i]);
+                    }
+                }
+            }
+            return true;
+        }
+
         public static char? FirstRecurringCharacter(string Data)
         {
             if (Data.Length < 2)
@@ -17,7 +41,7 @@ namespace Puzzles
             else
             {
                 HashSet<char> charInData = new HashSet<char>();
-                for(int i = 0; i < Data.Length; i++)
+                for (int i = 0; i < Data.Length; i++)
                 {
                     if (charInData.Contains(Data[i]))
                     {
@@ -49,7 +73,7 @@ namespace Puzzles
                     }
                     else
                     {
-                        charInData.Add(Data[i],1);
+                        charInData.Add(Data[i], 1);
                     }
                 }
             }
