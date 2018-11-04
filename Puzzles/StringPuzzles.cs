@@ -8,16 +8,18 @@ namespace Puzzles
 {
     public static class StringPuzzles
     {
+        /// <summary>
+        /// * Cases to Discuss are 
+        /// *  1) What about Empty Strings?
+        /// *  2) ASCII or UNICODE(Also Check if Lower Case and Upper Case Be Considered Same)
+        /// *  3) Can I Use Data structures or not? O(n)
+        /// *  4) Can I sort the Data? O(NLogN)
+        /// *  5) Brute Force O(N^2)
+        /// </summary>
+        /// <param name="Data"></param>
+        /// <returns></returns>
         public static bool IsStringContainingAllUniqueCharacters(string Data)
         {
-            /*
-             * Cases to Discuss are
-             *  1) What about Empty Strings?
-             *  2) ASCII or UNICODE (Also Check if Lower Case and Upper Case Be Considered Same)
-             *  3) Can I Use Data structures or not? O(n)
-             *  4) Can I sort the Data? O(NLogN)
-             *  5) Brute Force O(N^2)
-             */
             bool[] charPresentInData = new bool[256];
             if (Data.Length < 2)
             {
@@ -33,7 +35,7 @@ namespace Puzzles
                     }
                     else
                     {
-                        charPresentInData[Data[i]]=true;
+                        charPresentInData[Data[i]] = true;
                     }
                 }
             }
