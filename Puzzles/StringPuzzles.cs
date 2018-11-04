@@ -10,7 +10,7 @@ namespace Puzzles
     {
         public static char? FirstRecurringCharacter(string Data)
         {
-            if (Data == string.Empty)
+            if (Data.Length < 2)
             {
                 return null;
             }
@@ -28,6 +28,34 @@ namespace Puzzles
                         charInData.Add(Data[i]);
                     }
                 }
+            }
+            return null;
+        }
+
+        public static char? FirstNonRecurringCharacter(string Data)
+        {
+            Dictionary<char, int> charInData = new Dictionary<char, int>();
+            if (Data.Length == 0)
+            {
+                return null;
+            }
+            else
+            {
+                for (int i = 0; i < Data.Length; i++)
+                {
+                    if (charInData.ContainsKey(Data[i]))
+                    {
+                        charInData[Data[i]]++;
+                    }
+                    else
+                    {
+                        charInData.Add(Data[i],1);
+                    }
+                }
+            }
+            if (charInData.ContainsValue(1))
+            {
+                return charInData.First(x => x.Value == 1).Key;
             }
             return null;
         }

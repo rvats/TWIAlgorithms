@@ -11,5 +11,12 @@ namespace MainDemo
             Console.WriteLine(StringPuzzles.FirstRecurringCharacter(Data));
             Console.ReadKey();
         }
+
+        public static void FirstNonRecurringCharacter()
+        {
+            string Data = Console.ReadLine();
+            Console.WriteLine(StringPuzzles.FirstNonRecurringCharacter(Data));
+            Console.ReadKey();
+        }
     }
 }

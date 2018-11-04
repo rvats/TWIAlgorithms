@@ -9,6 +9,7 @@
         static void Main(string[] args)
         {
             PuzzleDemo.FirstRecurringCharacter();
+            PuzzleDemo.FirstNonRecurringCharacter();
         }
 
         public override bool Equals(object obj)
