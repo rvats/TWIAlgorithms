@@ -10,22 +10,30 @@ namespace Puzzles
     {
         public static bool IsStringContainingAllUniqueCharacters(string Data)
         {
+            /*
+             * Cases to Discuss are
+             *  1) What about Empty Strings?
+             *  2) ASCII or UNICODE (Also Check if Lower Case and Upper Case Be Considered Same)
+             *  3) Can I Use Data structures or not? O(n)
+             *  4) Can I sort the Data? O(NLogN)
+             *  5) Brute Force O(N^2)
+             */
+            bool[] charPresentInData = new bool[256];
             if (Data.Length < 2)
             {
                 return true;
             }
             else
             {
-                HashSet<char> charInData = new HashSet<char>();
                 for (int i = 0; i < Data.Length; i++)
                 {
-                    if (charInData.Contains(Data[i]))
+                    if (charPresentInData[Data[i]])
                     {
                         return false;
                     }
                     else
                     {
-                        charInData.Add(Data[i]);
+                        charPresentInData[Data[i]]=true;
                     }
                 }
             }
