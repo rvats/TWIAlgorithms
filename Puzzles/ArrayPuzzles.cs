@@ -10,17 +10,9 @@ namespace Puzzles
     {
         public static string URLify(char[] Data, int TrueLength)
         {
-            int SpaceCount=0, Index=0, i=0;
-            for(i=0; i < TrueLength; i++)
-            {
-                if(Data[i]==' ')
-                {
-                    SpaceCount++;
-                }
-            }
-            Index = TrueLength + SpaceCount * 2;
+            int Index = Data.Length;
 
-            for(i = TrueLength - 1; i >=0 ; i--)
+            for(int i = TrueLength - 1; i >=0 ; i--)
             {
                 if(Data[i]==' ')
                 {
