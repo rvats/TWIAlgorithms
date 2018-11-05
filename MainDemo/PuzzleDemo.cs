@@ -30,5 +30,11 @@ namespace MainDemo
                 : Data1 + " is not a permutation of " + Data2;
             Console.WriteLine(result);
         }
+
+        public static void URLify(string Data)
+        {
+            var result = "URLify " + Data + " is " + ArrayPuzzles.URLify(Data.ToCharArray(), Data.Length);
+            Console.WriteLine(result);
+        }
     }
 }
