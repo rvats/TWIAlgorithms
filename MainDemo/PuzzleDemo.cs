@@ -33,7 +33,8 @@ namespace MainDemo
 
         public static void URLify(string Data)
         {
-            var result = "URLify " + Data + " is " + ArrayPuzzles.URLify(Data.ToCharArray(), Data.Length);
+            int TrueLength = Data.TrimEnd().Length;
+            var result = "URLify " + Data.TrimEnd() + " is " + ArrayPuzzles.URLify(Data.ToCharArray(), TrueLength);
             Console.WriteLine(result);
         }
     }
