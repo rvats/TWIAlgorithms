@@ -10,9 +10,7 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            Console.Write("Enter Your Data String: ");
-            var Data = Console.ReadLine();
-            PuzzleDemo.URLify(Data);
+            DataStructureDemo.TreeTraversal();
             Console.ReadKey();
         }
 

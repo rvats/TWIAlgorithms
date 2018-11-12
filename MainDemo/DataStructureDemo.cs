@@ -32,6 +32,9 @@ namespace MainDemo
             postOrderPath = treeOperations.IterativePostOrderTraversal();
             DisplayPath(postOrderPath);
             Console.WriteLine("=========================================================================");
+            Console.WriteLine("The Max Level for Leaf Node of The Tree is "+treeOperations.FindMaxLevel()+".\nHierarchical representation is shown below: ");
+            treeOperations.PrintHierarchy();
+            Console.WriteLine("=========================================================================");
         }
 
         private static void DisplayPath(List<BinaryTreeNode> path)
