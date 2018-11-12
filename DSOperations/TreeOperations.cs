@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DSOperations
 {
-    public class TreeOperations : ITreeOperations
+    public class TreeOperations : ITreeOperations, ITreeOperations
     {
         private BinaryTreeNode current;
 
@@ -207,5 +207,65 @@ namespace DSOperations
             return base.GetHashCode();
         }
         #endregion
+
+        public int FindMaxLevel()
+        {
+            int maxLevel = 0;
+            if (current == null) return maxLevel;
+            var mainQueue = new Queue<BinaryTreeNode>();
+            var subQueue = new Queue<BinaryTreeNode>();
+            mainQueue.Enqueue(current);
+            while (mainQueue.Count > 0)
+            {
+                var temp = mainQueue.Dequeue();
+                if (temp.Left != null)
+                {
+                    subQueue.Enqueue(temp.Left);
+                }
+                if (temp.Right != null)
+                {
+                    subQueue.Enqueue(temp.Right);
+                }
+                if (mainQueue.Count == 0)
+                {
+                    maxLevel++;
+                    while (subQueue.Count > 0)
+                    {
+                        mainQueue.Enqueue(subQueue.Dequeue());
+                    }
+                }
+            }
+            return maxLevel;
+        }
+
+        public void PrintHierarchy()
+        {
+            if (current == null) return;
+            var mainQueue = new Queue<BinaryTreeNode>();
+            var subQueue = new Queue<BinaryTreeNode>();
+            mainQueue.Enqueue(current);
+            while (mainQueue.Count > 0)
+            {
+                var temp = mainQueue.Dequeue();
+                Console.Write(temp.Value + " ");
+
+                if (temp.Left != null)
+                {
+                    subQueue.Enqueue(temp.Left);
+                }
+                if (temp.Right != null)
+                {
+                    subQueue.Enqueue(temp.Right);
+                }
+                if (mainQueue.Count == 0)
+                {
+                    Console.WriteLine();
+                    while (subQueue.Count > 0)
+                    {
+                        mainQueue.Enqueue(subQueue.Dequeue());
+                    }
+                }
+            }
+        }
     }
 }
