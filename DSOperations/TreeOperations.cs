@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DSOperations
 {
-    public class TreeOperations : ITreeOperations, ITreeOperations
+    public class TreeOperations : ITreeOperations
     {
         private BinaryTreeNode current;
 

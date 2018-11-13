@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Puzzles", "Puzzles", "{77C4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Puzzles", "Puzzles\Puzzles.csproj", "{C31A5346-69A7-4732-9B64-F828B9F621C9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixOperations", "MatrixOperations\MatrixOperations.csproj", "{731E4EFD-507B-4CAE-8EE5-E35959A33B77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{C31A5346-69A7-4732-9B64-F828B9F621C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C31A5346-69A7-4732-9B64-F828B9F621C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C31A5346-69A7-4732-9B64-F828B9F621C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{731E4EFD-507B-4CAE-8EE5-E35959A33B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731E4EFD-507B-4CAE-8EE5-E35959A33B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731E4EFD-507B-4CAE-8EE5-E35959A33B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731E4EFD-507B-4CAE-8EE5-E35959A33B77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{F54D4FBD-57BF-4D7C-8AD9-F6482C21FEA3} = {ECDA2195-67E6-4F55-A742-7B830B4A251E}
 		{79A9C09A-0D2F-42A7-B053-D54FCCB6D507} = {ECDA2195-67E6-4F55-A742-7B830B4A251E}
 		{C31A5346-69A7-4732-9B64-F828B9F621C9} = {77C4F436-BB9E-4BBD-B04F-7097AC821BD1}
+		{731E4EFD-507B-4CAE-8EE5-E35959A33B77} = {ECDA2195-67E6-4F55-A742-7B830B4A251E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {68B27CB7-EEF8-4A89-9135-34C8282AD6A2}
