@@ -110,5 +110,10 @@ namespace Puzzles
             }
             return null;
         }
+
+        public static bool IsPermutationOfPalindrome(string Data)
+        {
+            return false;
+        }
     }
 }
