@@ -1,4 +1,4 @@
-﻿using Puzzles;
+﻿using Maths;
 using System;
 
 namespace MainDemo
@@ -11,8 +11,14 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            int[] data = { 0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 5, 5, 6, 6};
-            Console.WriteLine(ArrayPuzzles.FindElementAppearingOddNumberOfTimes(data));
+            int position = 0;
+            while (position >= 0)
+            {
+                Console.Write("Enter Fibonnaci Number Position: ");
+                position = int.Parse(Console.ReadLine());
+                Console.WriteLine("The Fibonacci Value for "+position+" is "+Maths.Maths.Fibonnaci(position));
+            }
+            
             Console.WriteLine("Press Any Key To Exit");
             Console.ReadKey();
         }

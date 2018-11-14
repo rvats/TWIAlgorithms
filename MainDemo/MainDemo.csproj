@@ -58,6 +58,10 @@
       <Project>{2f4d6395-c3ba-43e0-98f1-fec5b2275924}</Project>
       <Name>Logger</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Maths\Maths.csproj">
+      <Project>{4082a27a-0e46-4fe5-8e44-30c0f37291ce}</Project>
+      <Name>Maths</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MatrixOperations\MatrixOperations.csproj">
       <Project>{731e4efd-507b-4cae-8ee5-e35959a33b77}</Project>
       <Name>MatrixOperations</Name>
