@@ -1,4 +1,4 @@
-﻿using MatrixOperations;
+﻿using Puzzles;
 using System;
 
 namespace MainDemo
@@ -11,30 +11,8 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            Matrix.TwoDimensionalArray = new int[][]
-            {
-                new int[]{1,2,3,4,5,6 },
-                new int[]{7,8,9,10,11,12 },
-                new int[]{13,14,15,16,17,18 },
-                new int[]{19,20,21,22,23,24 }
-            };
-            bool result = true;
-            while (result)
-            {
-                Console.Write("Enter A Number: ");
-                int K = int.Parse(Console.ReadLine());
-                result = Matrix.FindKInTwoDimensionalArray(K);
-                Console.WriteLine(result 
-                    ? K + " Found in The Given Two Dimensional Matrix"
-                    : K + " Not Found in The Given Two Dimensional Matrix");
-            }
-            Matrix.TwoDimensionalArray = new int[][]
-            {
-                new int[] { 4, 3, 8, 4 },
-                new int[] { 9, 5, 1, 9 },
-                new int[]{ 2, 7, 6, 2 }
-            };
-            Console.WriteLine(Matrix.CountMagicSquare());
+            int[] data = { 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15};
+            Console.WriteLine(ArrayPuzzles.LongestSubsequenceInArray(data));
             Console.WriteLine("Press Any Key To Exit");
             Console.ReadKey();
         }

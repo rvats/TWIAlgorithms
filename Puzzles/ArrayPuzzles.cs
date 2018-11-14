@@ -29,5 +29,24 @@ namespace Puzzles
             }
             return new string(Data);
         }
+
+        public static int LongestSubsequenceInArray(int[] data)
+        {
+            if (data == null)
+            {
+                return 0;
+            }
+            int length = data.Length;
+            int[] cache = new int[length];
+            for(int i = 1; i < length; i++)
+            {
+                for(int j = 0; j < i; j++)
+                {
+                    if (data[i] > data[j])
+                        cache[i] = Math.Max(cache[i], cache[j] + 1);
+                }
+            }
+            return cache[length-1];
+        }
     }
 }
