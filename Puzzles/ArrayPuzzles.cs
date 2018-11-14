@@ -48,5 +48,29 @@ namespace Puzzles
             }
             return cache[length-1];
         }
+
+        public static int FindElementAppearingOddNumberOfTimes(int[] data)
+        {
+            if(data != null && data.Length > 0)
+            {
+                HashSet<int> mapCountOdd = new HashSet<int>();
+                foreach(var number in data)
+                {
+                    if (mapCountOdd.Contains(number))
+                    {
+                        mapCountOdd.Remove(number);
+                    }
+                    else
+                    {
+                        mapCountOdd.Add(number);
+                    }
+                }
+                if (mapCountOdd.Count == 1)
+                {
+                    return mapCountOdd.First();
+                }
+            }
+            throw new Exception("No Element Appears Odd Times");
+        }
     }
 }
