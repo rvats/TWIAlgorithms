@@ -4,17 +4,27 @@ namespace Puzzles
 {
     public static class MatrixPuzzles
     {
-        private static readonly List<char[]> phoneDigitsList = new List<char[]> { "".ToCharArray(), "".ToCharArray(), "abc".ToCharArray(), "def".ToCharArray(), "ghi".ToCharArray(), "jkl".ToCharArray(), "mno".ToCharArray(), "pqrs".ToCharArray(), "tuv".ToCharArray(), "wxyz".ToCharArray() };
+        private static readonly List<char[]> phoneDigitsList = new List<char[]>
+        {
+            "".ToCharArray(), // Digit 0 On Phone
+            "".ToCharArray(), // Digit 1 On Phone
+            "abc".ToCharArray(), // Digit 2 On Phone
+            "def".ToCharArray(), // Digit 3 On Phone
+            "ghi".ToCharArray(), // Digit 4 On Phone
+            "jkl".ToCharArray(), // Digit 5 On Phone
+            "mno".ToCharArray(), // Digit 6 On Phone
+            "pqrs".ToCharArray(), // Digit 7 On Phone
+            "tuv".ToCharArray(), // Digit 8 On Phone
+            "wxyz".ToCharArray() // Digit 9 On Phone
+        };
         private static List<string> FinalResult = new List<string>();
 
-        private static void GetWordsFromPhoneDigitsUtil(int[] Number, int CurrentDigit, char[] Output, int Num)
+        private static void GetWordsFromPhoneDigitsUtil(int[] Number, int CurrentDigit, char[] Output)
         {
-            // A recursive function to print all possible words that can be obtained 
-            // by input number[] of size n.  The output words are one by one stored 
-            // in output[]
+            int arrayLength = Number.Length;
             // Base case, if current output word is prepared 
             int i;
-            if (CurrentDigit == Num)
+            if (CurrentDigit == arrayLength)
             {
                 FinalResult.Add(new string(Output));
                 return;
@@ -25,17 +35,18 @@ namespace Puzzles
             for (i = 0; i < phoneDigitsList[Number[CurrentDigit]].Length; i++)
             {
                 Output[CurrentDigit] = phoneDigitsList[Number[CurrentDigit]][i];
-                GetWordsFromPhoneDigitsUtil(Number, CurrentDigit + 1, Output, Num);
+                GetWordsFromPhoneDigitsUtil(Number, CurrentDigit + 1,Output);
                 if (Number[CurrentDigit] == 0 || Number[CurrentDigit] == 1)
                     return;
             }
             return;
         }
  
-        public static List<string> GetWordsFromPhoneDigits(int[] Number, int Num)
+        public static List<string> GetWordsFromPhoneDigits(int[] Number)
         {
-            char[] result = new char[Number.Length];
-            GetWordsFromPhoneDigitsUtil(Number, 0, result, Num);
+            int arrayLength = Number.Length;
+            char[] Output = new char[arrayLength];
+            GetWordsFromPhoneDigitsUtil(Number,0,Output);
             return FinalResult;
         }
     }

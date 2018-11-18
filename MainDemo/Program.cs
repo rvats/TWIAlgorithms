@@ -11,7 +11,8 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            var resultData = PuzzleDemo.GetWordsFromPhoneDigits();
+            int[] Number = new int[] { 2, 3, 4 };
+            var resultData = PuzzleDemo.GetWordsFromPhoneDigits(Number);
             foreach(var data in resultData)
             {
                 Console.Write(data+ " ");
