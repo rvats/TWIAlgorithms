@@ -1,4 +1,7 @@
-﻿namespace Maths
+﻿using System;
+using System.Text;
+
+namespace Maths
 {
     public static class Maths
     {
@@ -20,6 +23,19 @@
                 }
                 return result;
             }
+        }
+        public static string CalculateBinary(int n)
+        {
+            int Length = 16;
+            int Bit = 1 << Length - 1;
+            StringBuilder PrintBit = new StringBuilder();
+            while (Bit>0)
+            {
+                var printBit = ((n & Bit) > 0) ? 1 : 0;
+                PrintBit.Append(printBit);
+                Bit >>= 1;
+            }
+            return PrintBit.ToString();
         }
     }
 }

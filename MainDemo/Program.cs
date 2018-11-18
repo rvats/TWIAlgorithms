@@ -11,12 +11,12 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            int position = 0;
-            while (position >= 0)
+            int _decimal = 0;
+            while (_decimal >= 0)
             {
-                Console.Write("Enter Fibonnaci Number Position: ");
-                position = int.Parse(Console.ReadLine());
-                Console.WriteLine("The Fibonacci Value for "+position+" is "+Maths.Maths.Fibonnaci(position));
+                Console.Write("Enter Decimal Number : ");
+                _decimal = int.Parse(Console.ReadLine());
+                Console.WriteLine("The Binary Value for "+ _decimal + " is "+Maths.Maths.CalculateBinary(_decimal));
             }
             
             Console.WriteLine("Press Any Key To Exit");
