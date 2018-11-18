@@ -11,12 +11,7 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            int[] Number = new int[] { 7, 2, 9, 7, 0, 1, 7 };
-            var resultData = PuzzleDemo.GetWordsFromPhoneDigits(Number);
-            foreach(var data in resultData)
-            {
-                Console.Write(data+ " ");
-            }
+            GameDemo.NQueensDemo();
             Console.WriteLine();
             Console.WriteLine("Press Any Key To Exit");
             Console.ReadKey();

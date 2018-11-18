@@ -37,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataStructureDemo.cs" />
+    <Compile Include="GameDemo.cs" />
     <Compile Include="IDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -46,6 +47,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Chess\Chess.csproj">
+      <Project>{ea4bb54d-7f62-4d02-b596-f6c7fe2f7325}</Project>
+      <Name>Chess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataStructures\DataStructures.csproj">
       <Project>{F54D4FBD-57BF-4D7C-8AD9-F6482C21FEA3}</Project>
       <Name>DataStructures</Name>
