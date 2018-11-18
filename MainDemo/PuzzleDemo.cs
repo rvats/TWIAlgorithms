@@ -43,7 +43,7 @@ namespace MainDemo
         /// Error Prone - Need To Complete
         /// </summary>
         /// <returns></returns>
-        public static List<string> GenerateNumbers()
+        public static List<string> GetWordsFromPhoneDigits()
         {
             int[] Number = new int[]{ 2, 3, 4 };
             int n = Number.Length;
