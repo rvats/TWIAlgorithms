@@ -26,20 +26,25 @@ namespace Puzzles
             int i;
             if (CurrentDigit == arrayLength)
             {
-                FinalResult.Add(new string(Output));
-                return;
+                var result = new string(Output).Replace("_", "");
+                FinalResult.Add(result);
             }
-
-            // Try all 3 possible characters for current digir in number[] 
-            // and recur for remaining digits 
-            for (i = 0; i < phoneDigitsList[Number[CurrentDigit]].Length; i++)
+            else
             {
-                Output[CurrentDigit] = phoneDigitsList[Number[CurrentDigit]][i];
-                GetWordsFromPhoneDigitsUtil(Number, CurrentDigit + 1,Output);
                 if (Number[CurrentDigit] == 0 || Number[CurrentDigit] == 1)
-                    return;
+                {
+                    Output[CurrentDigit] = '_';
+                    GetWordsFromPhoneDigitsUtil(Number, CurrentDigit + 1, Output);
+                }
+                else
+                {
+                    for (i = 0; i < phoneDigitsList[Number[CurrentDigit]].Length; i++)
+                    {
+                        Output[CurrentDigit] = phoneDigitsList[Number[CurrentDigit]][i];
+                        GetWordsFromPhoneDigitsUtil(Number, CurrentDigit + 1, Output);
+                    }
+                }
             }
-            return;
         }
  
         public static List<string> GetWordsFromPhoneDigits(int[] Number)
