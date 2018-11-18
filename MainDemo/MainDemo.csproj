@@ -71,6 +71,10 @@
       <Project>{731e4efd-507b-4cae-8ee5-e35959a33b77}</Project>
       <Name>MatrixOperations</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{393cebd1-10dd-4ae1-8ba9-8abbebf420f5}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Puzzles\Puzzles.csproj">
       <Project>{c31a5346-69a7-4732-9b64-f828b9f621c9}</Project>
       <Name>Puzzles</Name>

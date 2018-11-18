@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C31A5346-69A7-4732-9B64-F828B9F621C9}</ProjectGuid>
+    <ProjectGuid>{393CEBD1-10DD-4AE1-8BA9-8ABBEBF420F5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Puzzles</RootNamespace>
-    <AssemblyName>Puzzles</AssemblyName>
+    <RootNamespace>Models</RootNamespace>
+    <AssemblyName>Models</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,17 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArrayPuzzles.cs" />
-    <Compile Include="GeometryPuzzles.cs" />
-    <Compile Include="MatrixPuzzles.cs" />
-    <Compile Include="StringPuzzles.cs" />
+    <Compile Include="IRectangle2DPlane.cs" />
+    <Compile Include="Rectangle2DPlane.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{393cebd1-10dd-4ae1-8ba9-8abbebf420f5}</Project>
-      <Name>Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

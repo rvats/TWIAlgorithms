@@ -1,4 +1,5 @@
-﻿using Puzzles;
+﻿using Models;
+using Puzzles;
 using System;
 using System.Collections.Generic;
 
@@ -39,13 +40,14 @@ namespace MainDemo
             Console.WriteLine(result);
         }
 
-        /// <summary>
-        /// Error Prone - Need To Complete
-        /// </summary>
-        /// <returns></returns>
         public static List<string> GetWordsFromPhoneDigits(int[] Number)
         {
             return MatrixPuzzles.GetWordsFromPhoneDigits(Number);
+        }
+
+        public static long CalculateOverLapArea(Rectangle2DPlane rectangle1, Rectangle2DPlane rectangle2)
+        {
+            return GeometryPuzzles.CalculateOverLapArea(rectangle1, rectangle2);
         }
     }
 }
