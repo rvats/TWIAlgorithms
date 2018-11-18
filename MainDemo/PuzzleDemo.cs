@@ -1,5 +1,6 @@
 ﻿using Puzzles;
 using System;
+using System.Collections.Generic;
 
 namespace MainDemo
 {
@@ -11,7 +12,7 @@ namespace MainDemo
                 ? Data + " contains characters which are all unique."
                 : Data + " contains characters which are not unique.";
             Console.WriteLine(result);
-        } 
+        }
 
         public static void FirstRecurringCharacter(string Data)
         {
@@ -36,6 +37,17 @@ namespace MainDemo
             int TrueLength = Data.TrimEnd().Length;
             var result = "URLify " + Data.TrimEnd() + " is " + ArrayPuzzles.URLify(Data.ToCharArray(), TrueLength);
             Console.WriteLine(result);
+        }
+
+        /// <summary>
+        /// Error Prone - Need To Complete
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GenerateNumbers()
+        {
+            int[] Number = new int[]{ 2, 3, 4 };
+            int n = Number.Length;
+            return MatrixPuzzles.GetWordsFromPhoneDigits(Number, n);
         }
     }
 }
