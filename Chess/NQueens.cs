@@ -10,9 +10,9 @@ namespace Chess
         public static int NumberOfRowsOnBoard;
         private static List<Tuple<int, int>> QueenPositions = new List<Tuple<int, int>>();
 
-        public static List<Tuple<int, int>> GetQueensSafelyOnBoard()
+        public static List<Tuple<int, int>> GetQueensSafelyOnBoard(int firstQueensColumn = 0)
         {
-            if (PlaceQueens(0))
+            if (PlaceQueens(firstQueensColumn))
             {
                 return QueenPositions;
             }
