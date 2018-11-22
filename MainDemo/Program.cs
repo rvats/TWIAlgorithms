@@ -12,9 +12,7 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            GameDemo.NQueensDemo();
-            //var Area = PuzzleDemo.CalculateOverLapArea(rectangle1,rectangle2);
-            //Console.WriteLine("Overlapping Area Between Two Given Rectangles is: "+Area);
+            PuzzleDemo.PrintKFrequentElements();
             Console.WriteLine("Press Any Key To Exit");
             Console.ReadKey();
         }

@@ -7,6 +7,26 @@ namespace MainDemo
 {
     public static class PuzzleDemo
     {
+        public static void PrintKFrequentElements()
+        {
+            Console.Write("Enter Length of Array Data: ");
+            int length = int.Parse(Console.ReadLine());
+            var ArrayData = new int[length];
+            Console.WriteLine("Enter " + length + " Elements for Array Data: ");
+            for (int i = 0; i < length; i++)
+            {
+                ArrayData[i] = int.Parse(Console.ReadLine());
+            }
+            Console.Write("Enter Value of K Frequent Elements to be find in Array Data: ");
+            int K = int.Parse(Console.ReadLine());
+            var Result = ArrayPuzzles.FindKFrequentElements(ArrayData, K);
+            foreach(var element in Result)
+            {
+                Console.Write(element + " ");
+            }
+            Console.WriteLine();
+        }
+
         public static void IsStringContainingAllUniqueCharacters(string Data)
         {
             var result = StringPuzzles.IsStringContainingAllUniqueCharacters(Data)

@@ -70,5 +70,30 @@ namespace Puzzles
             }
             throw new Exception("No Element Appears Odd Times");
         }
+
+        public static int[] FindKFrequentElements(int[] ArrayData, int K)
+        {
+            var Result = new int[K];
+            var FrequencyMap = new Dictionary<int, int>();
+            foreach(var element in ArrayData)
+            {
+                if (FrequencyMap.ContainsKey(element))
+                {
+                    FrequencyMap[element]++;
+                }
+                else
+                {
+                    FrequencyMap.Add(element, 1);
+                }
+            }
+            for(int i = 0; i < Result.Length; i++)
+            {
+                var max = FrequencyMap.Aggregate((l, r) => l.Value >= r.Value ? l : r).Key;
+                FrequencyMap.Remove(max);
+                Result[i] = max;
+            }
+            
+            return Result;
+        }
     }
 }
