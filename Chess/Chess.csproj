@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ChessBoard.cs" />
     <Compile Include="NQueens.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SafePositions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
