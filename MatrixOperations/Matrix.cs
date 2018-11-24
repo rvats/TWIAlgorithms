@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -150,4 +151,123 @@ namespace MatrixOperations
             return ans;
         }
     }
+
+    //public class OgrePath
+    //{
+
+    //    static int[][] Maze =
+    //    {
+    //        new int[] {2,1,0,0,0,0,0,0,0,0},
+    //        new int[] {0,0,1,0,0,0,0,0,0,0},
+    //        new int[] {1,0,0,0,0,1,0,1,0,0},
+    //        new int[] {0,0,0,0,0,0,0,0,0,0},
+    //        new int[] {0,0,1,1,0,0,0,0,0,0},
+    //        new int[] {0,0,1,0,0,0,0,1,0,1},
+    //        new int[] {1,1,0,0,0,0,0,0,0,0},
+    //        new int[] {0,0,0,0,0,0,0,0,0,0},
+    //        new int[] {0,0,0,0,0,1,1,0,0,0},
+    //        new int[] {0,0,0,0,0,1,0,0,0,3}
+    //    };
+
+    //    public static bool[][] Visited = new bool[Maze.Length][Maze[0].Length];
+
+    //    static ArrayList<Point> neighbors = new ArrayList<Point>();
+
+    //    public static void main(String[] args)
+    //    {
+    //        OgrePath OP = new OgrePath();
+    //        for (int i = 0; i < Maze.Length; i++)
+    //        {
+    //            for (int j = 0; j < Maze[i].Length; j++)
+    //            {
+    //                visited[j][i] = false;
+    //            }
+    //        }
+    //        visited[getOgre(maze).x][getOgre(maze).y] = true;
+    //        Console.WriteLine("Ogre: " + getOgre(maze));
+    //        dfs(maze, getOgre(maze));
+    //    }
+
+    //    public static bool dfs(int[][] maze, Point p)
+    //    {
+    //        neighbors = getNeighbors(maze, p);
+    //        if (maze[p.x][p.y] == 3)
+    //        {
+    //            System.out.println("FOUND IT");
+    //            return true;
+    //        }
+    //        if (neighbors.isEmpty())
+    //        {
+    //            return false;
+    //        }
+    //        for (int i = 0; i < neighbors.size(); i++)
+    //        {
+    //            System.out.println("Nieghbors: " + neighbors);
+    //            System.out.println(i + "(" + p.x + "," + p.y + ")");
+    //            visited[neighbors.get(i).x][neighbors.get(i).y] = true;
+    //            dfs(maze, neighbors.get(i));
+    //        }
+    //        return false;
+    //    }
+
+    //    public static ArrayList<Point> getNeighbors(int[][] maze, Point p)
+    //    {
+    //        ArrayList<Point> neighbors = new ArrayList<Point>();
+    //        Point left = new Point();
+    //        Point right = new Point();
+    //        Point down = new Point();
+    //        Point up = new Point();
+    //        down.x = p.x - 1;
+    //        down.y = p.y;
+    //        if (valid(maze, down)) neighbors.add(down);
+    //        up.x = p.x + 1;
+    //        up.y = p.y;
+    //        if (valid(maze, up)) neighbors.add(up);
+    //        left.x = p.x;
+    //        left.y = p.y - 1;
+    //        if (valid(maze, left)) neighbors.add(left);
+    //        right.x = p.x;
+    //        right.y = p.y + 1;
+    //        if (valid(maze, right)) neighbors.add(right);
+    //        return neighbors;
+    //    }
+
+    //    public static boolean valid(int[][] maze, Point p)
+    //    {
+    //        if (inMaze(maze, p) && canGo(maze, p) && visited[p.x][p.y] == false) return true;
+    //        else return false;
+    //    }
+
+    //    public static boolean inMaze(int[][] maze, Point p)
+    //    {
+    //        if (p.x < (maze[0].length - 1) && p.x > -1 && p.y < (maze.length - 1) && p.y > -1)
+    //        {
+    //            return true;
+    //        }
+    //        else return false;
+    //    }
+
+    //    public static boolean canGo(int[][] maze, Point p)
+    //    {
+    //        if (maze[p.x][p.y] != 1 && maze[p.x][p.y] != 4) return true;
+    //        else return false;
+    //    }
+
+    //    public static Point getOgre(int[][] maze)
+    //    {
+    //        Point ogre = new Point();
+    //        for (int i = 0; i < maze.length; i++)
+    //        {
+    //            for (int j = 0; j < maze[i].length; j++)
+    //            {
+    //                if (maze[i][j] == 2)
+    //                {
+    //                    ogre.x = j;
+    //                    ogre.y = i;
+    //                }
+    //            }
+    //        }
+    //        return ogre;
+    //    }
+    //}
 }

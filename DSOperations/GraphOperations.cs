@@ -30,9 +30,7 @@ namespace DSOperations
                             stack.Push(neighbour);
                         }
                     }
-                }
-                
-                
+                }                               
             }
             return DepthFirstPath;
         }

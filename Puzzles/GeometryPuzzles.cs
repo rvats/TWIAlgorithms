@@ -8,9 +8,9 @@ namespace Puzzles
         public static long CalculateOverLapArea(Rectangle2DPlane rectangle1, Rectangle2DPlane rectangle2)
         {
             long Area = 0;
-            int xDistance = CalculateOverlapDistance(rectangle1.BottomX, rectangle1.TopX, rectangle2.BottomX, rectangle2.TopX);
+            int xDistance = CalculateOverlapDistance(rectangle1.Bottom.X, rectangle1.Top.X, rectangle2.Bottom.X, rectangle2.Top.X);
             if (xDistance < 0) return 0;
-            int yDistance = CalculateOverlapDistance(rectangle1.BottomY, rectangle1.TopY, rectangle2.BottomY, rectangle2.TopY);
+            int yDistance = CalculateOverlapDistance(rectangle1.Bottom.Y, rectangle1.Top.Y, rectangle2.Bottom.Y, rectangle2.Top.Y);
             if (yDistance < 0) return 0;
             Area = xDistance * yDistance;
             return Area;
