@@ -12,7 +12,7 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            DataStructureDemo.PartitionDemo();
+            DataStructureDemo.ReverseDemo();
             Console.WriteLine("Press Any Key To Exit");
             Console.ReadKey();
         }

@@ -94,5 +94,18 @@ namespace DSOperations
             }
             return true;
         }
+
+        public LinkedListNode Reverse(LinkedListNode head)
+        {
+            LinkedListNode reverse = null;
+            while (head != null)
+            {
+                LinkedListNode pointer = new LinkedListNode(head.Value);
+                pointer.Next = reverse;
+                reverse = pointer;
+                head = head.Next;
+            }
+            return reverse;
+        }
     }
 }
