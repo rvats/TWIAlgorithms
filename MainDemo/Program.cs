@@ -12,7 +12,7 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            PuzzleDemo.PrintKFrequentElements();
+            DataStructureDemo.PartitionDemo();
             Console.WriteLine("Press Any Key To Exit");
             Console.ReadKey();
         }

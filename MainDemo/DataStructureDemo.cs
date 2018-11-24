@@ -184,6 +184,26 @@ namespace MainDemo
             Console.WriteLine();
         }
 
+        public static void PartitionDemo()
+        {
+            LinkedListNodeOperations linkedListNodeOperations = new LinkedListNodeOperations();
+            LinkedListNode node = linkedListNodeOperations.GetNewList();
+
+            Console.Write("Enter Data to do partition on: ");
+            int data = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("List Before Partition:");
+            var message = linkedListNodeOperations.PrintList(node);
+            Console.WriteLine(message);
+
+            LinkedListNode result = linkedListNodeOperations.Partition(node, data);
+            
+            Console.WriteLine("List After Partition:");
+            message = linkedListNodeOperations.PrintList(result);
+            Console.WriteLine(message);
+        }
+
+
         public override string ToString()
         {
             return base.ToString();
