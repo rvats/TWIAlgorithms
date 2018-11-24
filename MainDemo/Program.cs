@@ -1,6 +1,4 @@
-﻿using Maths;
-using Models;
-using System;
+﻿using System;
 
 namespace MainDemo
 {
