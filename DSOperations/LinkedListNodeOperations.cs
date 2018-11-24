@@ -1,5 +1,6 @@
 ﻿using DataStructures;
 using System;
+using System.Collections.Generic;
 
 namespace DSOperations
 {
@@ -67,6 +68,31 @@ namespace DSOperations
             }
             tail.Next = null;
             return head;
+        }
+
+        public bool IsPalindrome(LinkedListNode head)
+        {
+            LinkedListNode fast = head;
+            LinkedListNode slow = head;
+            Stack<int> stack = new Stack<int>();
+            while (fast != null && fast.Next != null)
+            {
+                stack.Push(slow.Value);
+                fast = fast.Next.Next;
+                slow = slow.Next;
+            }
+            if (fast != null)
+            {
+                slow = slow.Next;
+            }
+            while (stack.Count > 0)
+            {
+                int data = stack.Pop();
+                if (data != slow.Value)
+                    return false;
+                slow = slow.Next;
+            }
+            return true;
         }
     }
 }

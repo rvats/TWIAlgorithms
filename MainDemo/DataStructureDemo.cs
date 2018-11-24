@@ -189,18 +189,7 @@ namespace MainDemo
             LinkedListNodeOperations linkedListNodeOperations = new LinkedListNodeOperations();
             LinkedListNode node = linkedListNodeOperations.GetNewList();
 
-            Console.Write("Enter Data to do partition on: ");
-            int data = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("List Before Partition:");
-            var message = linkedListNodeOperations.PrintList(node);
-            Console.WriteLine(message);
-
-            LinkedListNode result = linkedListNodeOperations.Partition(node, data);
-            
-            Console.WriteLine("List After Partition:");
-            message = linkedListNodeOperations.PrintList(result);
-            Console.WriteLine(message);
+            Console.WriteLine(linkedListNodeOperations.IsPalindrome(node));
         }
 
 
