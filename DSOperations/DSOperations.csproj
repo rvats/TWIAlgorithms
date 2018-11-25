@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GraphOperations.cs" />
+    <Compile Include="HelperUtil.cs" />
     <Compile Include="IGraphOperations.cs" />
     <Compile Include="ITreeOperations.cs" />
     <Compile Include="LinkedListNodeOperations.cs" />

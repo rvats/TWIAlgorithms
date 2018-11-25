@@ -7,7 +7,7 @@ namespace DSOperations
 {
     public class TreeOperations : ITreeOperations
     {
-        private BinaryTreeNode current;
+        public BinaryTreeNode Current;
 
         public TreeOperations()
         {
@@ -23,7 +23,7 @@ namespace DSOperations
         #region PopulateTreeOperations
         public void PopulateBinarySearchTree(List<object> Data)
         {
-            var root = current;
+            var root = Current;
 
             while (Data.Count > 0)
             {
@@ -31,7 +31,7 @@ namespace DSOperations
                 Data.RemoveAt(0);
             }
 
-            current = root;
+            Current = root;
         }
 
         private BinaryTreeNode Insert(BinaryTreeNode root, Object v)
@@ -57,8 +57,8 @@ namespace DSOperations
         #region RecursiveTraversal
         public List<BinaryTreeNode> RecursivePreOrderTraversal()
         {
-            var root = current;
-            return RecursivePreOrderTraversal(current);
+            var root = Current;
+            return RecursivePreOrderTraversal(Current);
         }
 
         private List<BinaryTreeNode> RecursivePreOrderTraversal(BinaryTreeNode root)
@@ -72,8 +72,8 @@ namespace DSOperations
 
         public List<BinaryTreeNode> RecursiveInOrderTraversal()
         {
-            BinaryTreeNode root = current;
-            return RecursiveInOrderTraversal(current);
+            BinaryTreeNode root = Current;
+            return RecursiveInOrderTraversal(Current);
         }
 
         private List<BinaryTreeNode> RecursiveInOrderTraversal(BinaryTreeNode root)
@@ -87,8 +87,8 @@ namespace DSOperations
 
         public List<BinaryTreeNode> RecursivePostOrderTraversal()
         {
-            BinaryTreeNode root = current;
-            return RecursivePostOrderTraversal(current);
+            BinaryTreeNode root = Current;
+            return RecursivePostOrderTraversal(Current);
         }
 
         private List<BinaryTreeNode> RecursivePostOrderTraversal(BinaryTreeNode root)
@@ -105,11 +105,11 @@ namespace DSOperations
         public List<BinaryTreeNode> IterativePreOrderTraversal()
         {
             var preOrderPath = new List<BinaryTreeNode>();
-            if (current == null)
+            if (Current == null)
             {
                 return preOrderPath;
             }
-            var root = current;
+            var root = Current;
 
             var stack = new Stack<BinaryTreeNode>();
             stack.Push(root);
@@ -132,11 +132,11 @@ namespace DSOperations
         public List<BinaryTreeNode> IterativeInOrderTraversal()
         {
             var inOrderPath = new List<BinaryTreeNode>();
-            if (current == null)
+            if (Current == null)
             {
                 return inOrderPath;
             }
-            var root = current;
+            var root = Current;
 
             var stack = new Stack<BinaryTreeNode>();
 
@@ -157,11 +157,11 @@ namespace DSOperations
         public List<BinaryTreeNode> IterativePostOrderTraversal()
         {
             var postOrderPath = new List<BinaryTreeNode>();
-            if (current == null)
+            if (Current == null)
             {
                 return postOrderPath;
             }
-            var root = current;
+            var root = Current;
 
             var stack1 = new Stack<BinaryTreeNode>();
             var stack2 = new Stack<BinaryTreeNode>();
@@ -211,10 +211,10 @@ namespace DSOperations
         public int FindMaxLevel()
         {
             int maxLevel = 0;
-            if (current == null) return maxLevel;
+            if (Current == null) return maxLevel;
             var mainQueue = new Queue<BinaryTreeNode>();
             var subQueue = new Queue<BinaryTreeNode>();
-            mainQueue.Enqueue(current);
+            mainQueue.Enqueue(Current);
             while (mainQueue.Count > 0)
             {
                 var temp = mainQueue.Dequeue();
@@ -240,10 +240,10 @@ namespace DSOperations
 
         public void PrintHierarchy()
         {
-            if (current == null) return;
+            if (Current == null) return;
             var mainQueue = new Queue<BinaryTreeNode>();
             var subQueue = new Queue<BinaryTreeNode>();
-            mainQueue.Enqueue(current);
+            mainQueue.Enqueue(Current);
             while (mainQueue.Count > 0)
             {
                 var temp = mainQueue.Dequeue();
@@ -266,6 +266,24 @@ namespace DSOperations
                     }
                 }
             }
+        }
+
+        public BinaryTreeNode CreateMinimalBinarySearchTree(int[] array, int start, int end)
+        {
+            if (array == null)
+            {
+                return null;
+            }       
+            if(end < start)
+            {
+                return null;
+            }
+            int mid = (start + end) / 2;
+            BinaryTreeNode root = new BinaryTreeNode();
+            root.Value = array[mid];
+            root.Left = CreateMinimalBinarySearchTree(array, start, mid - 1);
+            root.Right = CreateMinimalBinarySearchTree(array, mid + 1, end);
+            return root;
         }
     }
 }

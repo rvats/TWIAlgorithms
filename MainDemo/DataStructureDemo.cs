@@ -225,6 +225,27 @@ namespace MainDemo
             message = linkedListNodeOperations.PrintList(result);
             Console.WriteLine(message);
         }
+
+        public static void CreateMinimalBinarySearchTreeDemo()
+        {
+            Console.Write("Enter Length of Array: ");
+            int arrayLength = int.Parse(Console.ReadLine());
+
+            int[] array = new int[arrayLength];
+            for (int i = 0; i < arrayLength; i++)
+            {
+                Console.Write(string.Format("Enter Data at {0} position in array: ", i));
+                array[i] = int.Parse(Console.ReadLine());
+            }
+
+            TreeOperations treeOperations = new TreeOperations();
+            treeOperations.Current = treeOperations.CreateMinimalBinarySearchTree(array, 0, arrayLength - 1);
+
+            HelperUtil.DisplayList(treeOperations.IterativePreOrderTraversal());
+            HelperUtil.DisplayList(treeOperations.IterativeInOrderTraversal());
+            HelperUtil.DisplayList(treeOperations.IterativePostOrderTraversal());
+        }
+
         public override string ToString()
         {
             return base.ToString();

@@ -10,7 +10,7 @@ namespace MainDemo
 
         static void Main(string[] args)
         {
-            DataStructureDemo.ReverseDemo();
+            DataStructureDemo.CreateMinimalBinarySearchTreeDemo();
             Console.WriteLine("Press Any Key To Exit");
             Console.ReadKey();
         }
