@@ -37,24 +37,6 @@ namespace MainDemo
             Console.WriteLine("=========================================================================");
         }
 
-        private static void DisplayPath(List<BinaryTreeNode> path)
-        {
-            var pathLength = path.Count;
-            for (int i = 0; i < pathLength; i++)
-            {
-                if (i < pathLength - 1)
-                {
-                    Console.Write(path[i].Value.ToString() + " -> ");
-                }
-                else
-                {
-                    Console.Write(path[i].Value.ToString());
-                }
-
-            }
-            Console.WriteLine();
-        }
-
         public static void DepthFirstTraversal()
         {
             GraphOperations graphOperations;
@@ -101,6 +83,101 @@ namespace MainDemo
 
             graphOperations.StartingNode = nodeZ;
             breadthFirstPath = DisplayBreadthFirstTraversal(graphOperations);
+        }
+
+        public static void PartitionDemo()
+        {
+            LinkedListNodeOperations linkedListNodeOperations = new LinkedListNodeOperations();
+            LinkedListNode node = linkedListNodeOperations.GetNewList();
+
+            Console.Write("Enter Data to do partition on: ");
+            int data = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("List Before Partition:");
+            var message = linkedListNodeOperations.PrintList(node);
+            Console.WriteLine(message);
+
+            LinkedListNode result = linkedListNodeOperations.Partition(node, data);
+            
+            Console.WriteLine("List After Partition:");
+            message = linkedListNodeOperations.PrintList(result);
+            Console.WriteLine(message);
+        }
+
+        public static void IsPalindromeDemo()
+        {
+            LinkedListNodeOperations linkedListNodeOperations = new LinkedListNodeOperations();
+            LinkedListNode node = linkedListNodeOperations.GetNewList();
+            Console.WriteLine(linkedListNodeOperations.IsPalindrome(node));
+        }
+
+        public static void ReverseDemo()
+        {
+            LinkedListNodeOperations linkedListNodeOperations = new LinkedListNodeOperations();
+            LinkedListNode node = linkedListNodeOperations.GetNewList();
+
+            Console.WriteLine("List Before Reversing:");
+            var message = linkedListNodeOperations.PrintList(node);
+            Console.WriteLine(message);
+
+            LinkedListNode result = linkedListNodeOperations.Reverse(node);
+
+            Console.WriteLine("List After Reversing:");
+            message = linkedListNodeOperations.PrintList(result);
+            Console.WriteLine(message);
+        }
+
+        public static void CreateMinimalBinarySearchTreeDemo()
+        {
+            Console.Write("Enter Length of Array: ");
+            int arrayLength = int.Parse(Console.ReadLine());
+
+            int[] array = new int[arrayLength];
+            for (int i = 0; i < arrayLength; i++)
+            {
+                Console.Write(string.Format("Enter Data at {0} position in array: ", i));
+                array[i] = int.Parse(Console.ReadLine());
+            }
+
+            TreeOperations treeOperations = new TreeOperations();
+            treeOperations.Current = treeOperations.CreateMinimalBinarySearchTree(array, 0, arrayLength - 1);
+
+            HelperUtil.DisplayList(treeOperations.IterativePreOrderTraversal());
+            HelperUtil.DisplayList(treeOperations.IterativeInOrderTraversal());
+            HelperUtil.DisplayList(treeOperations.IterativePostOrderTraversal());
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        private static void DisplayPath(List<BinaryTreeNode> path)
+        {
+            var pathLength = path.Count;
+            for (int i = 0; i < pathLength; i++)
+            {
+                if (i < pathLength - 1)
+                {
+                    Console.Write(path[i].Value.ToString() + " -> ");
+                }
+                else
+                {
+                    Console.Write(path[i].Value.ToString());
+                }
+
+            }
+            Console.WriteLine();
         }
 
         private static void SetupGraph(out GraphOperations graphOperations, out Node nodeA, out Node nodeH, out Node nodeX, out Node nodeY, out Node nodeZ)
@@ -182,83 +259,6 @@ namespace MainDemo
 
             }
             Console.WriteLine();
-        }
-
-        public static void PartitionDemo()
-        {
-            LinkedListNodeOperations linkedListNodeOperations = new LinkedListNodeOperations();
-            LinkedListNode node = linkedListNodeOperations.GetNewList();
-
-            Console.Write("Enter Data to do partition on: ");
-            int data = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("List Before Partition:");
-            var message = linkedListNodeOperations.PrintList(node);
-            Console.WriteLine(message);
-
-            LinkedListNode result = linkedListNodeOperations.Partition(node, data);
-            
-            Console.WriteLine("List After Partition:");
-            message = linkedListNodeOperations.PrintList(result);
-            Console.WriteLine(message);
-        }
-
-        public static void IsPalindromeDemo()
-        {
-            LinkedListNodeOperations linkedListNodeOperations = new LinkedListNodeOperations();
-            LinkedListNode node = linkedListNodeOperations.GetNewList();
-            Console.WriteLine(linkedListNodeOperations.IsPalindrome(node));
-        }
-
-        public static void ReverseDemo()
-        {
-            LinkedListNodeOperations linkedListNodeOperations = new LinkedListNodeOperations();
-            LinkedListNode node = linkedListNodeOperations.GetNewList();
-
-            Console.WriteLine("List Before Reversing:");
-            var message = linkedListNodeOperations.PrintList(node);
-            Console.WriteLine(message);
-
-            LinkedListNode result = linkedListNodeOperations.Reverse(node);
-
-            Console.WriteLine("List After Reversing:");
-            message = linkedListNodeOperations.PrintList(result);
-            Console.WriteLine(message);
-        }
-
-        public static void CreateMinimalBinarySearchTreeDemo()
-        {
-            Console.Write("Enter Length of Array: ");
-            int arrayLength = int.Parse(Console.ReadLine());
-
-            int[] array = new int[arrayLength];
-            for (int i = 0; i < arrayLength; i++)
-            {
-                Console.Write(string.Format("Enter Data at {0} position in array: ", i));
-                array[i] = int.Parse(Console.ReadLine());
-            }
-
-            TreeOperations treeOperations = new TreeOperations();
-            treeOperations.Current = treeOperations.CreateMinimalBinarySearchTree(array, 0, arrayLength - 1);
-
-            HelperUtil.DisplayList(treeOperations.IterativePreOrderTraversal());
-            HelperUtil.DisplayList(treeOperations.IterativeInOrderTraversal());
-            HelperUtil.DisplayList(treeOperations.IterativePostOrderTraversal());
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
         }
     }
 }
